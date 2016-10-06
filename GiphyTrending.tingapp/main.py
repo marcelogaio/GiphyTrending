@@ -44,14 +44,10 @@ def loadurl():
     loadingScreen()
     url = 'http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC'
     state['json'] = json.load(urllib.urlopen(url))
-    state['pos'] = 45
-    #random.randrange(0,len(state['json']['data']),1)
+    state['pos'] = random.randrange(0,len(state['json']['data']),1)
     query()
 
 def query():
-    state['img'] = state['json']['data'][state['pos']]['images']['fixed_height_downsampled']['url']
-    if state['img'] == "":
-        state['img'] = state['json']['data'][state['pos']]['images']['fixed_height']['url']
 
 def switch(forward):
     state['lapse'] = 0
