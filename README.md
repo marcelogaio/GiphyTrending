@@ -8,7 +8,7 @@ Watch the trendiest GIFs from Giphy right in your Tingbot.
 ## Usage
 
 * Download and install the latest version of [Tide](https://github.com/tingbot/tide/releases/) for OS X.
-* Download the latest version of [GiphyTrending.tingapp](https://github.com/tingbot-apps/GiphyTrending/archive/master.zip).
+* Download the latest version of [GiphyTrending.tingapp](https://github.com/marcelogaio/GiphyTrending/archive/v1.0.zip).
 * Open `GiphyTrending.tingapp` with Tide.
 
 ---
