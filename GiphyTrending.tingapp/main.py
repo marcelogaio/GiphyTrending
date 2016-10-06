@@ -48,6 +48,9 @@ def loadurl():
     query()
 
 def query():
+    state['img'] = state['json']['data'][state['pos']]['images']['fixed_height_downsampled']['url']
+    if state['img'] == "":
+        state['img'] = state['json']['data'][state['pos']]['images']['fixed_height']['url']
 
 def switch(forward):
     state['lapse'] = 0
@@ -61,7 +64,6 @@ def switch(forward):
         state['pos'] = 0
     query()
 
-@left_button.press
 def left():
     #prev
     switch(False)
