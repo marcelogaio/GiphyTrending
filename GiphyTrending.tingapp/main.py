@@ -42,9 +42,9 @@ def clearScreen():
 
 def loadurl():
     loadingScreen()
-    url = 'http://api.giphy.com//v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC'
+    url = 'http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC'
     state['json'] = json.load(urllib.urlopen(url))
-    state['pos'] = 45 
+    state['pos'] = 45
     #random.randrange(0,len(state['json']['data']),1)
     query()
 
@@ -52,7 +52,6 @@ def query():
     state['img'] = state['json']['data'][state['pos']]['images']['fixed_height_downsampled']['url']
     if state['img'] == "":
         state['img'] = state['json']['data'][state['pos']]['images']['fixed_height']['url']
-    print state['pos'], state['json']['data'][state['pos']]['images']['fixed_height_downsampled']['url'], state['img']
 
 def switch(forward):
     state['lapse'] = 0
@@ -96,7 +95,7 @@ def loop():
     if not state['pause']:
         if state['autoloop']:
             state['lapse'] += 1;
-            if state['lapse'] > 1 * 30 * 2:
+            if state['lapse'] > 1 * 30 * 5:
                     state['lapse'] = 0
                     switch(True)
         screen.fill(color='black')
